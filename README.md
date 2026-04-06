@@ -1,6 +1,6 @@
 # FAST-LIO 映射工作区（部署说明）
 
-本工作区基于 ROS（catkin），包含 FAST-LIO 算法和相关驱动（如 Livox / Velodyne）。此文档帮助其他人在新环境中编译、配置并启动 `mapping_velodyne.launch`。
+本工作区基于 ROS（catkin），包含 FAST-LIO 算法和相关驱动（如 Livox / Velodyne）。当前已按官方 Livox ROS Driver 仓库结构整理，可直接编译并启动 `mapping_velodyne.launch`。
 
 ## 先决条件
 
@@ -32,6 +32,8 @@ cd fastlio_ws
 cd fastlio_ws
 catkin_make
 ```
+
+如果你手动替换过 `src/livox_ros_driver`，请确认包根目录同时包含 `package.xml` 和 `CMakeLists.txt`；官方仓库的标准结构是 `ws/src/livox_ros_driver/livox_ros_driver/` 作为包目录，而不是再多嵌套一层。
 
 编译完成后在每个新终端加载环境：
 
